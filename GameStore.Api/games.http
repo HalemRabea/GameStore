@@ -1,0 +1,30 @@
+GET http://localhost:5213/games
+
+
+###
+GET http://localhost:5213/genres
+###
+GET http://localhost:5213/games/2
+
+###
+POST http://localhost:5213/games/
+Content-Type: application/json
+
+{
+    "name":"haleeeem",
+    "genreId":1,
+    "price":94.45,
+    "releaseDate": "2025-06-12"
+}
+###
+PUT  http://localhost:5213/games/2
+Content-Type: application/json
+
+{
+    "name":"Adam Halem Rabea",
+    "genreId":4,
+    "price":55.45,
+    "releaseDate": "1953-08-18"
+}
+###
+DELETE  http://localhost:5213/games/1
