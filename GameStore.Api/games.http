@@ -11,10 +11,10 @@ POST http://localhost:5213/games/
 Content-Type: application/json
 
 {
-    "name":"haleeeem",
+    "name":"fawzy",
     "genreId":1,
     "price":94.45,
-    "releaseDate": "2025-06-12"
+    "releaseDate": "1993-06-12"
 }
 ###
 PUT  http://localhost:5213/games/2
