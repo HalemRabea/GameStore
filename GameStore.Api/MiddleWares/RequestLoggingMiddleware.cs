@@ -23,15 +23,23 @@ public class RequestLoggingMiddleware
             request.Path,
             request.QueryString
         );
-        await _next(context);
-        stopwatch.Stop();
-        _logger.LogInformation(
+        try
+        {
+            await _next(context);
+        }
+        finally
+        {
+            stopwatch.Stop();
+
+            _logger.LogInformation(
             "Request finished: {Method} {Path} → {StatusCode} in {ElapsedMs}ms",
             request.Method,
             request.Path,
             context.Response.StatusCode,
             stopwatch.ElapsedMilliseconds
         );
+        }
+        
     }
 }
 // Extension method
